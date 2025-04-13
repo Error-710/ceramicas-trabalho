@@ -51,7 +51,7 @@ function calcular(){
     const PecasNaCaixa = caixas(ladoa,ladob,caixa) * CalculoCaixa;
     
     //calcula a quantidade de rejunte
-    const Rejuntes = rejunte(TotalArea);
+    const Rejuntes = rejunte(CalculoCaixa);
 
     //calcula a quantidade de massa
     const MassaCola = CalculoCaixa;
