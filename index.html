@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador de Cerâmicas - Pai e Filho</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Sistema de Contador de Cerâmicas Oficial do Depósito Pai e Filho</h1>
+    <p><address>obs:colocar o ponto final em vez da virgula</address></p><br>
+
+    <div class="form-section">
+      <label for="ladoA">Lado A da cerâmica (cm):</label>
+      <input type="number" id="ladoA" placeholder="Ex: 60">
+
+      <label for="ladoB">Lado B da cerâmica (cm):</label>
+      <input type="number" id="ladoB" placeholder="Ex: 60">
+
+      <label for="caixaM2">Quantos m² vêm na caixa:</label>
+      <input type="number" step="0.01" id="caixa" placeholder="Ex: 2.5">
+    </div>
+
+    <div class="form-section">
+      <label for="altura">Altura do local (m):</label>
+      <input type="number" step="0.01" id="altura" placeholder="Ex: 2.5">
+
+      <label for="largura">Largura do local (m):</label>
+      <input type="number" step="0.01" id="largura" placeholder="Ex: 4.0">
+      <button style="
+      background-color:#002244; 
+      color: #FFD700; 
+      padding: 10px 20px; 
+      border: none; 
+      border-radius: 6px; 
+      font-size: 16px; 
+      cursor: pointer; 
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+      display: block;
+      margin: 20px auto;
+      " 
+      onclick="calcular()">Calcular</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantidade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Caixas de cerâmica</td>
+          <td id="tcaixa">--</td>
+        </tr>
+        <tr>
+          <td>Quantidade de peças</td>
+          <td id="tpeca">--</td>
+        </tr>
+        <tr>
+          <td>Rejuntes</td>
+          <td id="trejunte">--</td>
+        </tr>
+        <tr>
+          <td>Massas colas</td>
+          <td id="tmassa">--</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
