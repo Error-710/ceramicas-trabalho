@@ -10,19 +10,35 @@
   <div class="container">
     <h1>Sistema de Contador de Cerâmicas Oficial do Depósito Pai e Filho</h1>
     <p><address>obs:colocar o ponto final em vez da virgula</address></p><br>
+    <p><strong>o cliente irá querer saber a quantidade de ceramicas que ele vai levar?</strong></p><br>
 
-    <div class="form-section">
-      <label for="ladoA">Lado A da cerâmica (cm):</label>
-      <input type="number" id="ladoA" placeholder="Ex: 60">
+    
+    <div class="radio-group">
+      <label class="radio-option">
+        <input type="radio" name="op" value="sim" checked>
+        <span>Sim</span>
+      </label>
+      <label class="radio-option">
+        <input type="radio" name="op" value="nao">
+        <span>Não</span>
+      </label>
+    </div>
+    
 
-      <label for="ladoB">Lado B da cerâmica (cm):</label>
-      <input type="number" id="ladoB" placeholder="Ex: 60">
+    <div class="form-section1">
+      <div id="inputs">
+        <label for="ladoA">Lado A da cerâmica (cm):</label>
+        <input type="number" id="ladoA" placeholder="Ex: 60" >
+
+        <label for="ladoB">Lado B da cerâmica (cm):</label>
+        <input type="number" id="ladoB" placeholder="Ex: 60">
+      </div>
 
       <label for="caixaM2">Quantos m² vêm na caixa:</label>
       <input type="number" step="0.01" id="caixa" placeholder="Ex: 2.5">
     </div>
 
-    <div class="form-section">
+    <div class="form-section2">
       <label for="altura">Altura do local (m):</label>
       <input type="number" step="0.01" id="altura" placeholder="Ex: 2.5">
 
@@ -56,7 +72,7 @@
           <td>Caixas de cerâmica</td>
           <td id="tcaixa">--</td>
         </tr>
-        <tr>
+        <tr id="linha-peca">
           <td>Quantidade de peças</td>
           <td id="tpeca">--</td>
         </tr>
