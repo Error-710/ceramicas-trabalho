@@ -1,7 +1,3 @@
-alert('aplicação feita por pedro renan');
-
-
-
 //PASSO #1 : CALCULAR QUANTAS CERAMICAS VEM EM UMA CAIXA
 function caixas(a,b,caixaa){
     var pessa = (a / 100) * (b / 100);
@@ -29,13 +25,40 @@ function rejunte(arre){
     return calc
 }
 
+let linhaPeca = document.getElementById('linha-peca');
+let btns = document.querySelectorAll("input[name='op']");
+let inputs = document.getElementById('inputs');
+
+
+function ver() {
+    const selecionado = document.querySelector("input[name='op']:checked").value;
+    if (selecionado === 'sim') {
+        inputs.style.display = 'block';
+        linhaPeca.style.display = 'table-row';
+    } else {
+        inputs.style.display = 'none';
+        linhaPeca.style.display = 'none';
+    }
+}
+
+btns.forEach(btn => {
+    btn.addEventListener('change', ver);
+});
+
+ver();
+
+function parseNumber(inputValue) {
+    if (!inputValue) return 0;
+    const cleanedValue = inputValue.replace(",", ".");
+    return parseFloat(cleanedValue) || 0;
+}
+
 function calcular(){
     
-
     //VALORES PARA AS CONTAS:
-    let ladoa = parseFloat(document.getElementById('ladoA').value);
-    let ladob = parseFloat(document.getElementById('ladoB').value);
-    let caixa = parseFloat(document.getElementById('caixa').value);
+    let ladoa = parseNumber(document.getElementById('ladoA').value);
+    let ladob = parseNumber(document.getElementById('ladoB').value);
+    let caixa = parseNumber(document.getElementById('caixa').value);
 
     let altura = parseFloat(document.getElementById('altura').value);
     let largura = parseFloat(document.getElementById('largura').value);
@@ -46,7 +69,7 @@ function calcular(){
     
     //calcula quantas caixas precisam
     const CalculoCaixa = totalc(TotalArea,caixa);
-    
+
     //escrever a quantidade de peças na caixa
     const PecasNaCaixa = caixas(ladoa,ladob,caixa) * CalculoCaixa;
     
@@ -64,11 +87,15 @@ function calcular(){
     let tmassa = document.getElementById('tmassa');
 
     tcaixa.textContent = CalculoCaixa;
-    tpeça.textContent = PecasNaCaixa;
     trejunte.textContent = Rejuntes;
     tmassa.textContent = MassaCola;
+    
 
+    const selecionado = document.querySelector("input[name='op']:checked").value;
 
+    if (selecionado === 'sim') {
+    
+        tpeça.textContent = PecasNaCaixa;
+    }
 
 }
-//textContent 
