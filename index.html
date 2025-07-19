@@ -3,90 +3,85 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deposito pai e filho</title>
-  <link rel="icon" href="download.jpg" type="image/jpg">
-  <link rel="stylesheet" href="style.css" />
+  <title>Contador de Cerâmicas - Pai e Filho</title>
+  <link rel="icon" href="image/download.jpg" type="image/jpg">
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Sistema de Contador de Cerâmicas Oficial do Depósito Pai e Filho</h1>
-    <p><strong>o cliente irá querer saber a quantidade de ceramicas que ele vai levar?</strong></p><br>
+  <main class="container">
+    <header>
+      <h1>Sistema de Contador de Cerâmicas</h1>
+      <p class="subtitle">Oficial do Depósito Pai e Filho</p>
+    </header>
 
-    
-    <div class="radio-group">
-      <label class="radio-option">
-        <input type="radio" name="op" value="sim" checked>
-        <span>Sim</span>
-      </label>
-      <label class="radio-option">
-        <input type="radio" name="op" value="nao">
-        <span>Não</span>
-      </label>
-    </div>
-    
-
-    <div class="form-section1">
-      <div id="inputs">
-        <label for="ladoA">Lado A da cerâmica (cm):</label>
-        <input type="number" id="ladoA" placeholder="Ex: 60" >
-
-        <label for="ladoB">Lado B da cerâmica (cm):</label>
-        <input type="number" id="ladoB" placeholder="Ex: 60">
+    <section class="info">
+      <p class="obs">Obs: colocar o ponto final em vez da vírgula.</p>
+      <p class="pergunta"><strong>O cliente irá querer saber a quantidade de cerâmicas que ele vai levar?</strong></p>
+      <div class="radio-group">
+        <label class="radio-option">
+          <input type="radio" name="op" value="sim" checked>
+          <span>Sim</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="op" value="nao">
+          <span>Não</span>
+        </label>
       </div>
+    </section>
 
-      <label for="caixaM2">Quantos m² vêm na caixa:</label>
-      <input type="number" step="0.01" id="caixa" placeholder="Ex: 2.5">
-    </div>
+    <form id="formulario">
+      <section class="form-section1">
+        <div id="inputs">
+          <label for="ladoA">Lado A da cerâmica (cm):</label>
+          <input type="number" id="ladoA" placeholder="Ex: 60" required>
 
-    <div class="form-section2">
-      <label for="altura">Altura do local (m):</label>
-      <input type="number" step="0.01" id="altura" placeholder="Ex: 2.5">
+          <label for="ladoB">Lado B da cerâmica (cm):</label>
+          <input type="number" id="ladoB" placeholder="Ex: 60" required>
+        </div>
 
-      <label for="largura">Largura do local (m):</label>
-      <input type="number" step="0.01" id="largura" placeholder="Ex: 4.0">
-      <button style="
-      background-color:#002244; 
-      color: #FFD700; 
-      padding: 10px 20px; 
-      border: none; 
-      border-radius: 6px; 
-      font-size: 16px; 
-      cursor: pointer; 
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: background-color 0.3s ease;
-      display: block;
-      margin: 20px auto;
-      " 
-      onclick="calcular()">Calcular</button>
-    </div>
+        <label for="caixa">Quantos m² vêm na caixa:</label>
+        <input type="number" step="0.01" id="caixa" placeholder="Ex: 2.5" required>
+      </section>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Item</th>
-          <th>Quantidade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Caixas de cerâmica</td>
-          <td id="tcaixa">--</td>
-        </tr>
-        <tr id="linha-peca">
-          <td>Quantidade de peças</td>
-          <td id="tpeca">--</td>
-        </tr>
-        <tr>
-          <td>Rejuntes</td>
-          <td id="trejunte">--</td>
-        </tr>
-        <tr>
-          <td>Massas colas</td>
-          <td id="tmassa">--</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <script src="script.js"></script>
+      <section class="form-section2">
+        <label for="altura">Altura do local (m):</label>
+        <input type="number" step="0.01" id="altura" placeholder="Ex: 2.5" required>
+
+        <label for="largura">Largura do local (m):</label>
+        <input type="number" step="0.01" id="largura" placeholder="Ex: 4.0" required>
+        <button type="button" class="btn-calcular" onclick="calcular()">Calcular</button>
+      </section>
+    </form>
+
+    <section class="resultado">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantidade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Caixas de cerâmica</td>
+            <td id="tcaixa">--</td>
+          </tr>
+          <tr id="linha-peca">
+            <td>Quantidade de peças</td>
+            <td id="tpeca">--</td>
+          </tr>
+          <tr>
+            <td>Rejuntes</td>
+            <td id="trejunte">--</td>
+          </tr>
+          <tr>
+            <td>Massas colas</td>
+            <td id="tmassa">--</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script src="assets/js/script.js"></script>
 </body>
 </html>
